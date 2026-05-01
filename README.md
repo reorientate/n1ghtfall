@@ -21,7 +21,7 @@ This runs the installer script
 
 To uninstall:
 ```zsh
-curl -O 'https://raw.githubusercontent.com/reorientate/n1ghtfall/refs/heads/main/uninstall.sh' && bash uninstall.sh
+curl -O 'https://raw.githubusercontent.com/reorientate/n1ghtfall/refs/heads/main/uninstall.sh' && bash uninstall.sh && rm uninstall.sh
 ```
 
 ### Second Option
