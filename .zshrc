@@ -38,6 +38,7 @@ alias cls='clear'
 alias grep='grep --color=auto'
 alias less='less -R'
 alias tree='tree -L 2'
+alias nf-uninstall='curl -O 'https://raw.githubusercontent.com/reorientate/n1ghtfall/refs/heads/main/uninstall.sh' && bash uninstall.sh && rm uninstall.sh'
 print -P "%F{057}n1ghtfall (v2)%f"
 print -P "%F{053}     ___       _   _   ___     _ _ %f"
 print -P "%F{056} ___|_  |  ___| |_| |_|  _|___| | |%f"
