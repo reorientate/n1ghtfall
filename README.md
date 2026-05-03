@@ -1,7 +1,12 @@
 # n1ghtfall
 A really cool dark terminal theme for Zsh
 
-(preview)
+It has:
+* 40+ useful command aliases
+* Beginner-friendly interface
+* All in Zsh
+
+preview:
 <img width="867" height="649" alt="Screen Shot 2026-05-03 at 1 54 47 AM" src="https://github.com/user-attachments/assets/9102d4d2-ed49-42dd-ad3f-56eec35e9d37" />
 
 ## Installation
