@@ -101,7 +101,7 @@ display_banner
 # ============================================================================
 # Prompt Configuration
 # ============================================================================
-PROMPT=$'╭─[%F{025}%~%f]─[%F{056}$USER@n1ghtfall%f]─[%F{056}+%f]>\n╰──%F{025}%B$%b%f '
+PROMPT=$'╭─[%F{025}%~%f]─[%F{056}%n@n1ghtfall%f]─[%F{056}+%f]>\n╰──%F{025}%B$%b%f '
 
 # Reset terminal colors before executing commands
 preexec() { echo -ne "\e[0m" }
