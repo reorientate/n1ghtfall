@@ -4,7 +4,7 @@
 # ============================================================================
 
 # Initialization
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -i
 setopt correct_all
 
 # ============================================================================
@@ -182,6 +182,7 @@ display_banner() {
   print -P "%F{$colors[highlight]}     n1ght%f%F{105}|___|%f%F{$colors[highlight]}fall.sh%f"
   print ""
   print -P "[%F{073}==%f] %F{161}Loaded!%f"
+  print ""
 }
 
 display_banner
