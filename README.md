@@ -6,11 +6,17 @@ Features:
 * Beginner-friendly interface
 * Auto-updates every 1 hour (configurable)
 * Backups your original Zsh config
+* Easily Uninstallible
 * All in Zsh
 
-The Zsh config is a dotfile that is stored in your home directory named ```.zshrc```
+If you want to remove the "last login (...) at ttys(...)", you can create a dotfile:
+```zsh
+touch ~/.hushlogin
+```
 
-You can modify this config with this command:
+The Zsh config is a dotfile that is stored in your home directory named ```.zshrc```, which n1ghtfall backs up
+
+You can modify the new n1ghtfall Zsh config with this command:
 ```zsh
 nano ~/.zshrc
 ```
@@ -18,7 +24,10 @@ nano ~/.zshrc
 
 When you download, your backup zsh will stored in ```zshbackup``` in your home directory
 
-Preview:
+When you want to uninstall, you can run ```nf-uninstall``` to uninstall n1ghtfall
+
+n1ghtfall preview:
+
 <img width="759" height="544" alt="Screen Shot 2026-05-06 at 6 44 35 PM" src="https://github.com/user-attachments/assets/ee8817bc-c6dc-4d34-a753-623f1836a3a4" />
 
 ## Installation
@@ -28,13 +37,11 @@ Open your terminal and run this command:
 ```zsh
 curl -fsSL 'raw.githubusercontent.com/reorientate/n1ghtfall/refs/heads/main/install.sh' | bash
 ```
-
 This runs the installer script
 
-To uninstall:
-```zsh
-curl -O 'https://raw.githubusercontent.com/reorientate/n1ghtfall/refs/heads/main/uninstall.sh' && bash uninstall.sh && rm uninstall.sh
-```
+**WARNING:** As some of you may know, cURLing a raw script from a site then piping to Bash is a very bad practice, as you can unknowingly install malware onto your device without any security measures
+
+Consider checking out the install.sh script for the paranoid people!
 
 ### Second Option
 
