@@ -4,7 +4,7 @@
 # ============================================================================
 
 # Initialization
-autoload -Uz compinit && compinit -i
+autoload -Uz compinit && compinit -iu
 setopt correct_all
 
 # ============================================================================
