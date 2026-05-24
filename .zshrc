@@ -13,17 +13,6 @@ setopt correct_all
 
 
 # ============================================================================
-# Color Definitions
-# ============================================================================
-typeset -A colors
-colors[primary]=057
-colors[secondary]=053
-colors[accent]=056
-colors[tertiary]=061
-colors[quaternary]=098
-colors[highlight]=161
-
-# ============================================================================
 # Configuration
 # ============================================================================
 # Update check interval (in seconds)
@@ -74,8 +63,8 @@ check_and_update_n1ghtfall() {
     local remote_version=$(git rev-parse origin/main 2>/dev/null)
     
     if [ "$local_version" != "$remote_version" ]; then
-      echo -e "\n${YELLOW}[n1ghtfall]${NC} A new update is available!"
-      echo -e "${BLUE}Run 'nf-update' to install it.${NC}\n"
+      echo -e "\n%F{226}[n1ghtfall]%f A new update is available!"
+      echo -e "%F{027}Run 'nf-update' to install it.%f\n"
     fi
   ) &
 }
@@ -88,11 +77,11 @@ nf-update() {
   local zshrc_path="${HOME}/.zshrc"
   
   if [ ! -d "$install_dir" ]; then
-    echo -e "${RED}Error: n1ghtfall is not installed.${NC}"
+    echo -e "%F{196}Error: n1ghtfall is not installed.%f"
     return 1
   fi
   
-  echo -e "${YELLOW}Updating n1ghtfall...${NC}"
+  echo -e "%F{226}Updating n1ghtfall...%f"
   
   (
     cd "$install_dir"
@@ -101,11 +90,11 @@ nf-update() {
     if [ $? -eq 0 ]; then
       # Update the .zshrc file
       cp "$install_dir/.zshrc" "$zshrc_path"
-      echo -e "${GREEN}✓ Update complete!${NC}"
-      echo -e "${BLUE}Restart your terminal or run:${NC}"
-      echo -e "${YELLOW}  source ~/.zshrc${NC}"
+      echo -e "%F{046}✓ Update complete!%f"
+      echo -e "%F{027}Restart your terminal or run:%f"
+      echo -e "%F{226}  source ~/.zshrc%f"
     else
-      echo -e "${RED}Error: Failed to update n1ghtfall.${NC}"
+      echo -e "%F{196}Error: Failed to update n1ghtfall.%f"
       return 1
     fi
   )
@@ -178,13 +167,13 @@ alias nf-uninstall='curl -O "https://raw.githubusercontent.com/reorientate/n1ght
 # n1ghtfall Banner
 # ============================================================================
 display_banner() {
-  print -P "%F{$colors[primary]}n1ghtfall (v2)%f"
-  print -P "%F{$colors[primary]}(%D{%d/%m/%Y}%@) %y%f"
-  print -P "%F{$colors[secondary]}     ___       _   _   ___     _ _ %f"
-  print -P "%F{$colors[accent]} ___|_  |  ___| |_| |_|  _|___| | |%f"
-  print -P "%F{$colors[tertiary]}|   |_| |_| . |   |  _|  _| .'| | |%f"
-  print -P "%F{$colors[quaternary]}|_|_|_____|_. |_|_|_| |_| |__,|_|_|%f"
-  print -P "%F{$colors[highlight]}     n1ght%f%F{105}|___|%f%F{$colors[highlight]}fall.sh%f"
+  print -P "%F{057}n1ghtfall (v2)%f"
+  print -P "%F{057}(%D{%d/%m/%Y}%@) %y%f"
+  print -P "%F{053}     ___       _   _   ___     _ _ %f"
+  print -P "%F{056} ___|_  |  ___| |_| |_|  _|___| | |%f"
+  print -P "%F{061}|   |_| |_| . |   |  _|  _| .'| | |%f"
+  print -P "%F{098}|_|_|_____|_. |_|_|_| |_| |__,|_|_|%f"
+  print -P "%F{161}     n1ght%f%F{105}|___|%f%F{161}fall.sh%f"
   print ""
   print -P "[%F{073}==%f] %F{161}Loaded!%f"
   print ""
