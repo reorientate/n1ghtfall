@@ -1,6 +1,10 @@
 # n1ghtfall
 A really cool dark terminal theme for Zsh
 
+PLS SELECT THIS OPTION ON YOUR (macOS) TERMINAL SETTINGS!!!!
+
+<img width="459" height="89" alt="Screen Shot 2026-06-14 at 8 19 08 AM" src="https://github.com/user-attachments/assets/4d1c61ce-510b-4717-a091-ad20fa5b3167" />
+
 Features:
 * 40+ useful command aliases
 * Beginner-friendly interface
@@ -28,7 +32,7 @@ When you want to uninstall, you can run ```nf-uninstall``` to uninstall n1ghtfal
 
 n1ghtfall preview:
 
-<img width="759" height="544" alt="Screen Shot 2026-05-06 at 6 44 35 PM" src="https://github.com/user-attachments/assets/ee8817bc-c6dc-4d34-a753-623f1836a3a4" />
+<img width="867" height="642" alt="Screen Shot 2026-06-14 at 8 01 08 AM" src="https://github.com/user-attachments/assets/da581712-1813-4fb6-a2e4-79cec75aa4ed" />
 
 ## Installation
 
