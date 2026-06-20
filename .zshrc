@@ -1,16 +1,19 @@
 # ============================================================================
-# n1ghtfall v2 - Zsh Configuration
+# n1ghtfall v2.5 - Zsh Configuration
 # A really cool dark terminal theme for Zsh
 # ============================================================================
 
 # Initialization
 autoload -Uz compinit && compinit -u
 setopt correct_all
+zmodload zsh/complist
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors ''
 
 # ============================================================================
 # PATH(s) (you can add PATHs here under this box)
 # ============================================================================
-
+# export PATH="<absolute_path>:$PATH"
 
 # ============================================================================
 # Configuration
@@ -152,6 +155,7 @@ alias gdiff='git diff'
 alias python='python3'
 alias pip='pip3'
 alias vi='vim'
+alias mkexec='chmod +x'
 
 # ============================================================================
 # Utility Aliases
@@ -162,20 +166,21 @@ alias grep='grep --color=auto'
 alias less='less -R'
 alias tree='tree -L 2'
 alias nf-uninstall='curl -O "https://raw.githubusercontent.com/reorientate/n1ghtfall/refs/heads/main/uninstall.sh" && bash uninstall.sh && rm uninstall.sh'
+alias 0-256colors='for c in {0..256}; do printf "\e[38;5;${c}m██████████ ║${c}║ ██████████\e[0m\n"; done'
 
 # ============================================================================
 # n1ghtfall Banner
 # ============================================================================
 display_banner() {
-  print -P "%F{057}n1ghtfall (v2)%f"
-  print -P "%F{057}(%D{%d/%m/%Y}%@) %y%f"
+  print -P "%F{057}n1ghtfall (v2.5)%f"
+  print -P "%F{057}(%D{%m/%d/%Y}%@) %y%f"
   print -P "%F{053}     ___       _   _   ___     _ _ %f"
-  print -P "%F{056} ___|_  |  ___| |_| |_|  _|___| | |%f"
+  print -P "%F{056} ___|_  |  ___| |_| |_|  _|___| |%B*%b|%f"
   print -P "%F{061}|   |_| |_| . |   |  _|  _| .'| | |%f"
   print -P "%F{098}|_|_|_____|_. |_|_|_| |_| |__,|_|_|%f"
   print -P "%F{161}     n1ght%f%F{105}|___|%f%F{161}fall.sh%f"
   print ""
-  print -P "[%F{073}==%f] %F{161}Loaded!%f"
+  print -P "[%F{073}nf%f] %F{111}Loaded!%f"
   print ""
 }
 
