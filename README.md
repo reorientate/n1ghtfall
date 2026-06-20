@@ -10,7 +10,7 @@ Features:
 * Beginner-friendly interface
 * Auto-updates every 1 hour (configurable)
 * Backups your original Zsh config
-* Easily Uninstallible
+* Easily Uninstallable
 * All in Zsh
 
 If you want to remove the "last login (...) at ttys(...)", you can create a dotfile:
