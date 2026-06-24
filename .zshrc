@@ -1,5 +1,5 @@
 # ============================================================================
-# n1ghtfall v2.5 - Zsh Configuration
+# n1ghtfall v2.6 - Zsh Configuration
 # A really cool dark terminal theme for Zsh
 # ============================================================================
 
@@ -13,7 +13,7 @@ zstyle ':completion:*' list-colors ''
 # ============================================================================
 # PATH(s) (you can add PATHs here under this box)
 # ============================================================================
-# export PATH="<absolute_path>:$PATH"
+# export PATH="<path>:$PATH"
 
 # ============================================================================
 # Configuration
@@ -172,15 +172,15 @@ alias 0-256colors='for c in {0..256}; do printf "\e[38;5;${c}m██████
 # n1ghtfall Banner
 # ============================================================================
 display_banner() {
-  print -P "%F{057}n1ghtfall (v2.5)%f"
-  print -P "%F{057}(%D{%m/%d/%Y}%@) %y%f"
+  print -P "%F{057}n1ghtfall (%f%F{093}v2.6%f%F{057})%f"
+  print -P "%F{057}(%f%F{093}%D{%m/%d/%Y}%@%f%F{057}) %y%f"
   print -P "%F{053}     ___       _   _   ___     _ _ %f"
   print -P "%F{056} ___|_  |  ___| |_| |_|  _|___| |%B*%b|%f"
   print -P "%F{061}|   |_| |_| . |   |  _|  _| .'| | |%f"
   print -P "%F{098}|_|_|_____|_. |_|_|_| |_| |__,|_|_|%f"
   print -P "%F{161}     n1ght%f%F{105}|___|%f%F{161}fall.sh%f"
   print ""
-  print -P "[%F{073}nf%f] %F{111}Loaded!%f"
+  print -P "%F{057}[%f%F{093}nf%f%F{057}] %f%F{057}Loaded!%f"
   print ""
 }
 
