@@ -31,18 +31,17 @@ _n1ghtfall_source "$PLUGIN_DIR/n1ghtfall.zsh"
 if [[ -d "$PLUGIN_DIR/completions" ]]; then
   # Prepend so plugin completions take precedence
   fpath=("$PLUGIN_DIR/completions" ${fpath[@]})
-  # Initialize completion system if not already
-  if ! whence -w compinit >/dev/null 2>&1; then
-    autoload -Uz compinit
-  fi
-  if [[ -z "$_n1ghtfall_compinit_done" ]]; then
-    compinit -u
-    _n1ghtfall_compinit_done=1
+  # Ensure compinit is available
+  autoload -Uz compinit 2>/dev/null || true
+  # Initialize completion system if not already (avoid reinitializing in other plugins)
+  if [[ -z "${_N1GHTFALL_COMPINIT_DONE-}" ]]; then
+    compinit -u 2>/dev/null || true
+    _N1GHTFALL_COMPINIT_DONE=1
   fi
 fi
 
-# Provide a lightweight hook for users to customize behavior before and after plugin load
-# Users can define N1GHTFALL_BEFORE_INIT and N1GHTFALL_AFTER_INIT functions in their zshrc
+# Provide lightweight hooks for customization before/after plugin load
+# Users can define N1GHTFALL_BEFORE_INIT and N1GHTFALL_AFTER_INIT in their zshrc
 if typeset -f N1GHTFALL_BEFORE_INIT >/dev/null 2>&1; then
   N1GHTFALL_BEFORE_INIT
 fi
