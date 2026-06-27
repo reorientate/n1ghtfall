@@ -64,7 +64,8 @@ fi
 
 # Copy .zshrc configuration
 echo -e "${YELLOW}Installing n1ghtfall theme...${NC}"
-cp "$INSTALL_DIR/.zshrc" "$ZSHRC_PATH"
+mv "$INSTALL_DIR/.zshrc" "$INSTALL_DIR/nightfall.zsh"
+cp "$INSTALL_DIR/nightfall.zsh" "$ZSHRC_PATH"
 
 echo ""
 echo -e "${GREEN}✓ Installation complete!${NC}"
