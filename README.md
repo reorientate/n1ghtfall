@@ -1,8 +1,8 @@
 # n1ghtfall
 A really cool dark terminal theme for Zsh
 
-<img width="535" height="404" alt="Screen Shot 2026-06-26 at 9 16 46 PM" src="https://github.com/user-attachments/assets/64689eb2-46f9-42e5-bb9c-596c2979def4" />
-<img width="535" height="404" alt="Screen Shot 2026-06-26 at 9 52 41 PM" src="https://github.com/user-attachments/assets/abf61d46-8edd-4bcd-b297-fde10e27f98f" />
+<img width="560" height="404" alt="Screen Shot 2026-06-26 at 9 16 46 PM" src="https://github.com/user-attachments/assets/64689eb2-46f9-42e5-bb9c-596c2979def4" />
+<img width="560" height="404" alt="Screen Shot 2026-06-26 at 9 52 41 PM" src="https://github.com/user-attachments/assets/abf61d46-8edd-4bcd-b297-fde10e27f98f" />
 
 > (this is modified with some terminal settings modified to make it look better)
 
