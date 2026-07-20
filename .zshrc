@@ -69,7 +69,7 @@ check_and_update_n1ghtfall() {
       echo -e "\n%F{226}[n1ghtfall]%f A new update is available!"
       echo -e "%F{027}Run 'nf-update' to install it.%f\n"
     fi
-  ) &
+  ) &>/dev/null &
 }
 
 # ============================================================================
