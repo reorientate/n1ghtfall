@@ -80,11 +80,11 @@ nf-update() {
   local zshrc_path="${HOME}/.zshrc"
   
   if [ ! -d "$install_dir" ]; then
-    print -p "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Error: n1ghtfall is not installed.%f"
+    print -P "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Error: n1ghtfall is not installed.%f"
     return 1
   fi
   
-  print -p "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Updating n1ghtfall...%f"
+  print -P "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Updating n1ghtfall...%f"
   
   (
     cd "$install_dir"
@@ -93,11 +93,11 @@ nf-update() {
     if [ $? -eq 0 ]; then
       # Update the .zshrc file
       cp "$install_dir/.zshrc" "$zshrc_path"
-      print -p "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}✓ Update complete!%f"
-      print -p "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Restart your terminal or run:%f"
-      print -p "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}  source ~/.zshrc%f"
+      print -P "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}✓ Update complete!%f"
+      print -P "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Restart your terminal or run:%f"
+      print -P "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}  source ~/.zshrc%f"
     else
-      print -p "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Error: Failed to update n1ghtfall.%f"
+      print -P "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Error: Failed to update n1ghtfall.%f"
       return 1
     fi
   )
