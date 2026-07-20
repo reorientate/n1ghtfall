@@ -66,8 +66,8 @@ check_and_update_n1ghtfall() {
     local remote_version=$(git rev-parse origin/main 2>/dev/null)
     
     if [ "$local_version" != "$remote_version" ]; then
-      echo -e "\n%F{226}[n1ghtfall]%f A new update is available!"
-      echo -e "%F{027}Run 'nf-update' to install it.%f\n"
+      print -P "\n%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}A new update is available!%f"
+      print -P "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Run 'nf-update' to install it.%f\n"
     fi
   ) &>/dev/null &
 }
@@ -80,11 +80,11 @@ nf-update() {
   local zshrc_path="${HOME}/.zshrc"
   
   if [ ! -d "$install_dir" ]; then
-    echo -e "%F{196}Error: n1ghtfall is not installed.%f"
+    print -p "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Error: n1ghtfall is not installed.%f"
     return 1
   fi
   
-  echo -e "%F{226}Updating n1ghtfall...%f"
+  print -p "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Updating n1ghtfall...%f"
   
   (
     cd "$install_dir"
@@ -93,11 +93,11 @@ nf-update() {
     if [ $? -eq 0 ]; then
       # Update the .zshrc file
       cp "$install_dir/.zshrc" "$zshrc_path"
-      echo -e "%F{046}✓ Update complete!%f"
-      echo -e "%F{027}Restart your terminal or run:%f"
-      echo -e "%F{226}  source ~/.zshrc%f"
+      print -p "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}✓ Update complete!%f"
+      print -p "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Restart your terminal or run:%f"
+      print -p "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}  source ~/.zshrc%f"
     else
-      echo -e "%F{196}Error: Failed to update n1ghtfall.%f"
+      print -p "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Error: Failed to update n1ghtfall.%f"
       return 1
     fi
   )
@@ -122,7 +122,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 alias rmf='rm -rf'
-# removed alias for cat since '-v' can sometimes make output harder to read
+alias catv='cat -v'
 alias df='df -h'
 alias du='du -h'
 
@@ -153,7 +153,9 @@ alias gdiff='git diff'
 # Development Aliases
 # ============================================================================
 alias python='python3'
+alias py='python3'
 alias pip='pip3'
+alias pipstall='pip3 install'
 alias vi='vim'
 alias mkexec='chmod +x'
 
@@ -172,13 +174,13 @@ alias 0-256colors='for c in {0..256}; do printf "\e[38;5;${c}m██████
 # n1ghtfall Banner
 # ============================================================================
 display_banner() {
-  print -P "%F{057}n1ghtfall (%f%F{093}v2.6%f%F{057})%f"
+  print -P "%F{057}n1ghtfall (%f%F{093}v2.6.5%f%F{057})%f"
   print -P "%F{057}(%f%F{093}%D{%m/%d/%Y}%@%f%F{057}) %y%f"
   print -P "%F{053}     ___       _   _   ___     _ _ %f"
   print -P "%F{056} ___|_  |  ___| |_| |_|  _|___| |%B*%b|%f"
   print -P "%F{061}|   |_| |_| . |   |  _|  _| .'| | |%f"
   print -P "%F{098}|_|_|_____|_. |_|_|_| |_| |__,|_|_|%f"
-  print -P "%F{161}     n1ght%f%F{105}|___|%f%F{161}fall.sh%f"
+  print -P "%F{105}          |___|%f"
   print ""
   print -P "%F{057}[%f%F{093}nf%f%F{057}] %f%F{057}Loaded!%f"
   print ""
