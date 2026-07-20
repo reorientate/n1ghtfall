@@ -29,6 +29,8 @@ Features:
 * Easily Uninstallable
 * All in Zsh
 
+.zshrc code can now be found [in the wiki!](https://github.com/reorientate/n1ghtfall/wiki/n1ghtfall-2.6.5-.zshrc-code)
+
 (Recommended) If you want to remove the "last login (...) at ttys(...)", you can just create a file:
 ```zsh
 touch ~/.hushlogin
