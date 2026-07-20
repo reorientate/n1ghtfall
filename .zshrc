@@ -1,5 +1,5 @@
 # ============================================================================
-# n1ghtfall v2.6 - Zsh Configuration
+# n1ghtfall v2.6.5 - Zsh Configuration
 # A really cool dark terminal theme for Zsh
 # ============================================================================
 
