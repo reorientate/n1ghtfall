@@ -1,5 +1,5 @@
 # ============================================================================
-# n1ghtfall v2.6.5 - Zsh Configuration
+# n1ghtfall v2.7.5 - Zsh Configuration
 # A really cool dark terminal theme for Zsh
 # ============================================================================
 
@@ -36,12 +36,10 @@ check_and_update_n1ghtfall() {
   local check_file="${HOME}/.n1ghtfall-update-check"
   local check_interval=$N1GHTFALL_CHECK_INTERVAL
   
-  # Only check if the install directory exists
   if [ ! -d "$install_dir" ]; then
     return
   fi
   
-  # Check if we should run the update check (based on interval)
   local current_time=$(date +%s)
   if [ -f "$check_file" ]; then
     local last_check=$(cat "$check_file")
@@ -51,25 +49,22 @@ check_and_update_n1ghtfall() {
     fi
   fi
   
-  # Update the check timestamp
   echo "$current_time" > "$check_file"
   
-  # Check for updates in the background
   (
     cd "$install_dir"
     
     # Fetch the latest changes
     git fetch origin main 2>/dev/null || return
-    
-    # Compare local and remote versions
+
     local local_version=$(git rev-parse HEAD 2>/dev/null)
     local remote_version=$(git rev-parse origin/main 2>/dev/null)
     
     if [ "$local_version" != "$remote_version" ]; then
-      print -P "\n%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}A new update is available!%f"
+      print -P "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}A new update is available!%f"
       print -P "%F{057}[%f%F{093}nf%f%F{057}]%f %F{057}Run 'nf-update' to install it.%f\n"
     fi
-  ) &>/dev/null &
+  ) &>/dev/null &!
 }
 
 # ============================================================================
@@ -121,7 +116,7 @@ alias ls='ls --color'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
-alias rmf='rm -rf'
+alias rmrf='rm -rf'
 alias catv='cat -v'
 alias df='df -h'
 alias du='du -h'
@@ -130,7 +125,6 @@ alias du='du -h'
 # System Information Aliases
 # ============================================================================
 alias ps='ps aux'
-alias top='top -u $USER'
 alias ping='ping -c 5'
 alias ports='netstat -tuln'
 alias myip='curl -s https://ipinfo.io/ip'
@@ -156,8 +150,11 @@ alias python='python3'
 alias py='python3'
 alias pip='pip3'
 alias pipstall='pip3 install'
+alias pyhttpserver='python3 -m http.server'
 alias vi='vim'
 alias mkexec='chmod +x'
+alias zshrc='subl -n ~/.zshrc'
+alias subln='subl -n'
 
 # ============================================================================
 # Utility Aliases
@@ -166,7 +163,7 @@ alias cc='clear'
 alias cls='clear'
 alias grep='grep --color=auto'
 alias less='less -R'
-alias tree='tree -L 2'
+alias tree='tree -C'
 alias nf-uninstall='curl -O "https://raw.githubusercontent.com/reorientate/n1ghtfall/refs/heads/main/uninstall.sh" && bash uninstall.sh && rm uninstall.sh'
 alias 0-256colors='for c in {0..256}; do printf "\e[38;5;${c}m██████████ ║${c}║ ██████████\e[0m\n"; done'
 
@@ -174,7 +171,7 @@ alias 0-256colors='for c in {0..256}; do printf "\e[38;5;${c}m██████
 # n1ghtfall Banner
 # ============================================================================
 display_banner() {
-  print -P "%F{057}n1ghtfall (%f%F{093}v2.6.5%f%F{057})%f"
+  print -P "%F{057}n1ghtfall (%f%F{093}v2.7.5%f%F{057})%f"
   print -P "%F{057}(%f%F{093}%D{%m/%d/%Y}%@%f%F{057}) %y%f"
   print -P "%F{053}     ___       _   _   ___     _ _ %f"
   print -P "%F{056} ___|_  |  ___| |_| |_|  _|___| |%B*%b|%f"
