@@ -2,11 +2,11 @@
 
 <h3 align="center"> oh-my-zsh-inspired zsh terminal theme! </h3>
 
-<img width="334" height="248" alt="Screen Shot 2026-08-02 at 3 36 39 AM" src="https://github.com/user-attachments/assets/81cbba4d-2782-4af4-8446-dc5407c6ec20" />
+<img width="533" height="404" alt="Screen Shot 2026-08-02 at 3 36 39 AM" src="https://github.com/user-attachments/assets/81cbba4d-2782-4af4-8446-dc5407c6ec20" />
 
-<img width="334" height="248" alt="Screen Shot 2026-08-02 at 3 56 04 AM" src="https://github.com/user-attachments/assets/3ff6f927-8048-4c76-a59d-20c56d3d4f60" />
+<img width="533" height="404" alt="Screen Shot 2026-08-02 at 3 56 04 AM" src="https://github.com/user-attachments/assets/3ff6f927-8048-4c76-a59d-20c56d3d4f60" />
 
-<img width="334" height="248" alt="nfbanneranimtest" src="https://github.com/user-attachments/assets/115ebb34-4b5e-411d-b519-570250774831" />
+<img width="533" height="404" alt="nfbanneranimtest" src="https://github.com/user-attachments/assets/115ebb34-4b5e-411d-b519-570250774831" />
 
 (banner animation not in it because its really unstable but im working on it!!)
 
