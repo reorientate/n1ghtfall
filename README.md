@@ -1,16 +1,12 @@
-<h1 align="center"> n1ghtfall (v2.7.5) </h1>
+<h1 align="center"> n1ghtfall (v3.0.0) </h1>
 
 <h3 align="center"> oh-my-zsh-inspired zsh terminal theme! </h3>
 
-<img width="533" height="404" alt="Screen Shot 2026-08-02 at 3 36 39 AM" src="https://github.com/user-attachments/assets/81cbba4d-2782-4af4-8446-dc5407c6ec20" />
+<img width="634" height="462" alt="Screen Shot 2026-08-06 at 6 12 08 PM" src="https://github.com/user-attachments/assets/4b9297a9-0838-42dc-ab86-909a89ae6d70" />
 
-<img width="533" height="404" alt="Screen Shot 2026-08-02 at 3 56 04 AM" src="https://github.com/user-attachments/assets/3ff6f927-8048-4c76-a59d-20c56d3d4f60" />
+<img width="634" height="462" alt="Screen Shot 2026-08-06 at 6 23 25 PM" src="https://github.com/user-attachments/assets/d882b116-964c-4e7d-bc62-16a1a35dbb48" />
 
-<img width="533" height="404" alt="nfbanneranimtest" src="https://github.com/user-attachments/assets/115ebb34-4b5e-411d-b519-570250774831" />
-
-(banner animation not in it because its really unstable but im working on it!!)
-
-> (these previews are with some terminal settings modified to make it look better)
+> note: these previews are with some terminal settings modified to make it look better
 
 > [!IMPORTANT]
 > Enable `xterm_256color` in your terminal settings!
