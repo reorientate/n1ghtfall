@@ -511,7 +511,7 @@ n1ghtfall_duration() {
   [[ -n "$N1GHTFALL_CMD_DURATION" ]] && print -n "─[%F{220}⏱ $N1GHTFALL_CMD_DURATION%f]"
 }
 
-PROMPT=$'╭──[%F{025}%~%f]─[%F{056}%n@n1ghtfall%f]─[%F{056}+%f]$(n1ghtfall_git_branch)$(n1ghtfall_duration)─[$(n1ghtfall_exit_status)]>\n╰──[%F{056}#%f]───[%F{032}%B%b%f '
+PROMPT=$'╭──[%F{025}%~%f]─[%F{056}%n@$HOST%f]─[%F{056}+%f]$(n1ghtfall_git_branch)$(n1ghtfall_duration)─[$(n1ghtfall_exit_status)]>\n╰──[%F{056}#%f]───[%F{032}%B%b%f '
 
 # ============================================================================
 # Run Update Check on Shell Start
