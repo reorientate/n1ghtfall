@@ -8,13 +8,15 @@
 
 > note: these previews are with some terminal settings modified to make it look better
 
+> other note: "n1ghtfall" in "\[your_username@n1ghtfall\]" will be replaced with your computer's hostname, that was just for visuals
+
 > [!IMPORTANT]
 > Enable `xterm_256color` in your terminal settings!
 > 
 > <img width="455" height="301" alt="Screen Shot 2026-08-02 at 3 22 05 AM" src="https://github.com/user-attachments/assets/81b4732f-f9b9-472b-8ce0-c19cb6996e4f" />
 
 
-If you want the best visual experience, you can [download the font i use in previews](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/IBMPlexMono.zip) (choose semibold)
+If you want the best visual experience, you can [download the font i use in previews](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/IBMPlexMono.zip) (choose bold)
 
 ## Table of Contents
 - [Main stuff](#main-stuff)
