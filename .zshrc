@@ -1,5 +1,5 @@
 # ============================================================================
-# n1ghtfall v3.0.0 - Zsh Configuration
+# n1ghtfall v3.0.1 - Zsh Configuration
 # A really cool dark terminal theme for Zsh
 #
 # NOTE: `nf-update` pulls the stock .zshrc from the reorientate/n1ghtfall
@@ -16,6 +16,7 @@ autoload -Uz compinit && compinit -u
 autoload -Uz add-zsh-hook
 zmodload zsh/complist
 zmodload zsh/datetime 2>/dev/null
+source ~/.zgenom/zgenom.zsh
 setopt correct_all
 
 zstyle ':completion:*' menu select
@@ -72,7 +73,7 @@ bindkey "^[[1;5D" backward-word
 # ============================================================================
 # PATH(s) (you can add PATHs here under this box)
 # ============================================================================
-# export PATH="<path>:$PATH"
+
 
 # ============================================================================
 # Configuration
@@ -178,7 +179,7 @@ alias lsize='ls -lahS --color'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
-alias rmrf='rm -rf'
+alias rmf='rm -rf'
 alias catv='cat -v'
 alias df='df -h'
 alias du='du -h'
@@ -261,7 +262,7 @@ for _n1ghtfall_plugin in \
   "${HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"; do
   if [[ -f "$_n1ghtfall_plugin" ]]; then
     source "$_n1ghtfall_plugin"
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=056"
     break
   fi
 done
@@ -348,7 +349,7 @@ extract() {
     *.gz)      gunzip "$1"     ;;
     *.zip)     unzip "$1"      ;;
     *.rar)     unrar x "$1"    ;;
-    *.7z)      7z x "$1"       ;;
+    *.7z)      7zz x "$1"       ;;
     *.Z)       uncompress "$1" ;;
     *)         echo "'$1': unrecognized archive type" ;;
   esac
@@ -362,6 +363,16 @@ backup() {
   fi
   cp -- "$1" "$1.bak.$(date +%Y%m%d%H%M%S)"
 }
+
+# cd into a directory and ls
+cdls() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: cdls <dir>"
+    return 1
+  fi
+  cd -- "$1" && ls --color
+}
+take() { cdls "$@" }
 
 # Random password generator: genpass [length]
 genpass() {
@@ -400,11 +411,13 @@ psg() {
 
 # Quick system summary
 sysinfo() {
-  print -P "%F{057}OS:%f     $(uname -srm)"
-  print -P "%F{057}Host:%f   $(hostname)"
-  print -P "%F{057}Uptime:%f $(uptime -p 2>/dev/null || uptime)"
-  print -P "%F{057}Shell:%f  zsh $ZSH_VERSION"
-  print -P "%F{057}Term:%f   $TERM"
+  print -P "%F{057}OS:%f%F{093}        $(sw_vers -productName) $(sw_vers -productVersion)%f"
+  print -P "%F{057}Arch:%f%F{093}      $(uname -m)%f"
+  print -P "%F{057}Host:%f%F{093}      $(hostname)%f"
+  print -P "%F{057}Kernel:%f%F{093}    $(uname -sr)%f"
+  print -P "%F{057}Uptime:%f%F{093}    $(uptime -p 2>/dev/null || uptime)%f"
+  print -P "%F{057}Shell:%f%F{093}     zsh $ZSH_VERSION%f"
+  print -P "%F{057}Term:%f%F{093}      $TERM%f"
 }
 
 # Cross-platform clipboard copy: cat file | clipboard  (or its alias: copy)
@@ -435,13 +448,13 @@ urldecode() {
 # n1ghtfall Banner
 # ============================================================================
 display_banner() {
-  print -P "%F{057}n1ghtfall (%f%F{093}v3.0.0%f%F{057})%f"
+  print -P "%F{057}n1ghtfall (%f%F{093}v3.0.1%f%F{057})%f"
   print -P "%F{057}(%f%F{093}%D{%m/%d/%Y}%@%f%F{057}) %y%f"
   print -P "%F{053}     ___       _   _   ___     _ _ %f"
-  print -P "%F{056} ___|_  |  ___| |_| |_|  _|___| |%B*%b|%f"
-  print -P "%F{061}|   |_| |_| . |   |  _|  _| .'| | |%f"
-  print -P "%F{098}|_|_|_____|_. |_|_|_| |_| |__,|_|_|%f"
-  print -P "%F{105}      %f%F{89}--|=%f%F{105}|___|%f%F{89}=>%f"
+  print -P "%F{057} ___|_  |  ___| |_| |_|  _|___| |%B*%b|%f"
+  print -P "%F{063}|   |_| |_| . |   |  _|  _| .'| | |%f"
+  print -P "%F{099}|_|_|_____|_. |_|_|_| |_| |__,|_|_|%f"
+  print -P "%F{105}      %f%F{89}--|=%f%F{099}|___|%f%F{89}==>%f"
   print ""
   print -P "%F{057}[%f%F{093}nf%f%F{057}] %f%F{057}Loaded!%f"
 
@@ -500,7 +513,7 @@ n1ghtfall_git_branch() {
 # Green check on success, red X on failure
 n1ghtfall_exit_status() {
   if [[ "${N1GHTFALL_LAST_EXIT:-0}" -eq 0 ]]; then
-    print -n "%F{040}✓%f"
+    print -n "%F{025}✔︎%f"
   else
     print -n "%F{196}✗%f"
   fi
@@ -508,10 +521,10 @@ n1ghtfall_exit_status() {
 
 # Show how long the last command took, only if it was slow (> 3s)
 n1ghtfall_duration() {
-  [[ -n "$N1GHTFALL_CMD_DURATION" ]] && print -n "─[%F{220}⏱ $N1GHTFALL_CMD_DURATION%f]"
+  [[ -n "$N1GHTFALL_CMD_DURATION" ]] && print -n "─[%F{025}%B$N1GHTFALL_CMD_DURATION%b%f]"
 }
 
-PROMPT=$'╭──[%F{025}%~%f]─[%F{056}%n@$HOST%f]─[%F{056}+%f]$(n1ghtfall_git_branch)$(n1ghtfall_duration)─[$(n1ghtfall_exit_status)]>\n╰──[%F{056}#%f]───[%F{032}%B%b%f '
+PROMPT=$'╭──[%F{025}%~%f]─[%F{056}%n@$HOST%f]$(n1ghtfall_git_branch)$(n1ghtfall_duration)─[$(n1ghtfall_exit_status)]>\n╰──[%F{056}#%f]───=[%F{056}%B%b%f '
 
 # ============================================================================
 # Run Update Check on Shell Start
@@ -527,3 +540,5 @@ check_and_update_n1ghtfall
 # Alternative Prompt (uncomment to use)
 # ============================================================================
 # PROMPT="[%F{025}%~%f] %F{053}n%f%F{056}1%f%F{061}g%f%F{098}h%f%F{105}t%f%F{111}f%f%F{117}all%f %F{056}$%f "
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
