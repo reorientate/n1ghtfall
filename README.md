@@ -1,10 +1,10 @@
-<h1 align="center"> n1ghtfall (v3.0.0) </h1>
+<h1 align="center"> n1ghtfall (v3.0.1) </h1>
 
 <h3 align="center"> oh-my-zsh-inspired zsh terminal theme! </h3>
 
-<img width="634" height="462" alt="Screen Shot 2026-08-06 at 6 12 08 PM" src="https://github.com/user-attachments/assets/4b9297a9-0838-42dc-ab86-909a89ae6d70" />
+<img width="634" height="462" alt="Screen Shot 2026-08-15 at 3 16 21 AM" src="https://github.com/user-attachments/assets/cc90e02f-ecfb-4c04-a4bd-facbd80c3f76" />
 
-<img width="634" height="462" alt="Screen Shot 2026-08-06 at 6 23 25 PM" src="https://github.com/user-attachments/assets/d882b116-964c-4e7d-bc62-16a1a35dbb48" />
+<img width="634" height="462" alt="Screen Shot 2026-08-15 at 3 16 46 AM" src="https://github.com/user-attachments/assets/8a96cb2a-6622-4d70-a59a-e0a1fce14eac" />
 
 > note: these previews are with some terminal settings modified to make it look better
 
@@ -33,13 +33,14 @@ If you want the best visual experience, you can [download the font i use in prev
 Features:
 * 40+ useful command aliases
 * Cool look
+* fzf and zsh-autosuggestions support
 * (Soon) Banner animation
 * Auto-updates every 1 hour (configurable)
 * Backups your original Zsh config
 * Easily Uninstallable
 * All in Zsh
 
-.zshrc code can now be found [in the wiki!](https://github.com/reorientate/n1ghtfall/wiki/n1ghtfall-2.6.5-.zshrc-code)
+.zshrc code can now be found [in the wiki!](https://github.com/reorientate/n1ghtfall/wiki/n1ghtfall-3.0.1-.zshrc-code)
 
 (Recommended) If you want to remove the "last login (...) at ttys(...)", you can just create a file:
 ```zsh
