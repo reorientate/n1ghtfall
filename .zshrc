@@ -16,7 +16,6 @@ autoload -Uz compinit && compinit -u
 autoload -Uz add-zsh-hook
 zmodload zsh/complist
 zmodload zsh/datetime 2>/dev/null
-source ~/.zgenom/zgenom.zsh
 setopt correct_all
 
 zstyle ':completion:*' menu select
@@ -411,7 +410,6 @@ psg() {
 
 # Quick system summary
 sysinfo() {
-  print -P "%F{057}OS:%f%F{093}        $(sw_vers -productName) $(sw_vers -productVersion)%f"
   print -P "%F{057}Arch:%f%F{093}      $(uname -m)%f"
   print -P "%F{057}Host:%f%F{093}      $(hostname)%f"
   print -P "%F{057}Kernel:%f%F{093}    $(uname -sr)%f"
